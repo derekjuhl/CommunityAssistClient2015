@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfServiceGrant">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceGrant" nillable="true" type="tns:ServiceGrant" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceGrant" nillable="true" type="tns:ArrayOfServiceGrant" />
+  <xs:complexType name="ServiceGrant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommunityService" nillable="true" type="tns:CommunityService" />
+      <xs:element minOccurs="0" name="EmployeeKey" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GrantAllocation" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GrantAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GrantApprovalStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GrantDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GrantKey" type="xs:int" />
+      <xs:element minOccurs="0" name="GrantNeedExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GrantReviewDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PersonKey" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceKey" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceGrant" nillable="true" type="tns:ServiceGrant" />
+  <xs:complexType name="CommunityService">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ServiceDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceGrants" nillable="true" type="tns:ArrayOfServiceGrant" />
+      <xs:element minOccurs="0" name="ServiceKey" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceLifetimeMaximum" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ServiceMaximum" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommunityService" nillable="true" type="tns:CommunityService" />
+</xs:schema>
